@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather | Home</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+    <div class="limiter">
+		<div class="container-login0">
+			<div class="wrap-login0 d-flex flex-column justify-content-center align-items-center">
+				<img class="logo-img" src="/images/weather.png" alt="">
+				<form action="/" class="login0-form validate-form" method="get">
+					<div class="wrap-input0">
+						<input class="input0" type="text" name="city" placeholder="Enter City Name" required>
+					</div>
+				</form>
+				<% if(error === "false"){ %>
+					<div class="temp">
+						<%= temp_c %><span>&#176;</span>C
+						|
+						<%= temp_f %><span>&#176;</span>F
+					</div>
+					<div class="location">
+						<%= c_name %>, <%= region %>, <%= country %>
+					</div>
+					<div class="l_updated">
+						Last Updated: <%= last_updated %>
+					</div>
+				<% } else{ %>
+					<div class="l_updated">
+						<%= error %>
+					</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+https://www.weatherapi.com/api-explorer.aspx
